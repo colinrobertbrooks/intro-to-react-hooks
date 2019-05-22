@@ -1,0 +1,51 @@
+// without hooks
+class MousePosition extends Component {
+  state = { x: null, y: null };
+
+  componentDidMount() {
+    window.addEventListener("mousemove", this.handleMouseMove);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("mousemove", this.handleMouseMove);
+  }
+
+  handleMouseMove = ({ pageX, pageY }) =>
+    this.setState({
+      x: pageX,
+      y: pageY
+    });
+
+  render() {
+    return (
+      <span>
+        x: {this.state.x} y: {this.state.y}
+      </span>
+    );
+  }
+}
+
+// with hooks
+const MousePosition = () => {
+  const [mousePosition, setMousePosition] = useState({
+    x: null,
+    y: null
+  });
+
+  const handleMouseMove = ({ pageX, pageY }) =>
+    setMousePosition({
+      x: pageX,
+      y: pageY
+    });
+
+  useEffect(() => {
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
+  return (
+    <span>
+      x: {mousePosition.x} y: {mousePosition.y}
+    </span>
+  );
+};

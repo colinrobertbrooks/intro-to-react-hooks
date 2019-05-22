@@ -1,0 +1,138 @@
+import { Head, Appear } from 'mdx-deck'
+import { CodeSurfer } from 'mdx-deck-code-surfer'
+import { code } from "mdx-deck/themes"
+import dracula from "prism-react-renderer/themes/dracula"
+
+export const theme = {
+  ...code,
+  codeSurfer: {
+    ...dracula,
+    showNumbers: true
+  }
+}
+
+<Head>
+  <title>Introduction to React Hooks</title>
+</Head>
+
+# ⚛️ 🎣
+
+## Introduction to React Hooks
+
+---
+
+## React
+
+<Appear>
+  <p>Elemenmts, state & side effects</p>
+  <p>Declarative</p>
+  <p>Enables composition</p>
+</Appear>
+
+---
+
+## Hooks
+
+_"Hooks are a new addition in React 16.8. They let you use state and other React features without writing a class." - Docs_
+
+---
+
+import Counter from 'components/Counter.hook';
+
+# State
+
+<Counter />
+
+---
+
+<CodeSurfer
+ title="State"
+  code={require("!raw-loader!./snippets/state.snippet").default}
+  steps={[
+    { range: [2, 26], notes: "Without hooks" },
+    { range: [29, 41], notes: "With hooks" },
+    {}
+  ]}
+/>
+
+---
+
+# State
+
+`useState`
+
+_A new way to hook into state management._
+
+🎉
+
+---
+
+import MousePosition from 'components/MousePosition.custom-hook';
+
+# Side Effects
+
+<MousePosition />
+
+---
+
+<CodeSurfer
+ title="Side Effects"
+  code={require("!raw-loader!./snippets/side-effects.snippet").default}
+   steps={[
+    { range: [2, 26], notes: "Without hooks" },
+    { range: [29, 51], notes: "With hooks" },
+    {}
+  ]}
+/>
+
+---
+
+<CodeSurfer
+ title="Side Effects"
+  code={require("!raw-loader!./snippets/custom-hook.snippet").default}
+   steps={[
+    { notes: "With a custom hook 😎" },
+    { range: [2, 20], notes: "Custom hook" },
+    { range: [23, 31], notes: "Component" },
+    {}
+  ]}
+/>
+
+---
+
+# Side Effects
+
+`useEffect`
+
+_A new way to hook into the lifecycle._
+
+_Enable custom hooks, which unlock new composition patterns._
+
+🎉
+
+---
+
+# More Hook Examples
+
+ _Demo App ([link](https://github.com/colinrcummings/react-suspense-hooks-todo-app))_
+
+- [useState](https://github.com/colinrcummings/react-suspense-hooks-todo-app/search?q=useState&unscoped_q=useState)
+
+- [useEffect](https://github.com/colinrcummings/react-suspense-hooks-todo-app/search?q=useEffect&unscoped_q=useEffect)
+
+- [useContext](https://github.com/colinrcummings/react-suspense-hooks-todo-app/search?q=useContext&unscoped_q=useContext)
+
+- [useReducer](https://github.com/colinrcummings/react-suspense-hooks-todo-app/search?q=useReducer&unscoped_q=useReducer)
+
+- [useRef](https://github.com/colinrcummings/react-suspense-hooks-todo-app/search?q=useRef&unscoped_q=useRef)
+---
+
+# Resources
+
+- [Docs](https://reactjs.org/docs/hooks-intro.html)
+
+- [Video Introduction](https://www.youtube.com/watch?v=dpw9EHDh2bM)
+
+- [Video Tutorial](https://egghead.io/courses/simplify-react-apps-with-react-hooks)
+
+- [More...](https://github.com/glauberfc/awesome-react-hooks)
