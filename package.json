@@ -5,9 +5,12 @@
   "author": "Colin Cummings <colinrcummings@gmail.com>",
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build deck.mdx"
+    "build": "mdx-deck build --no-html deck.mdx",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "mdx-deck": "1.10.0",
     "mdx-deck-code-surfer": "^0.5.5",
     "raw-loader": "^2.0.0"
