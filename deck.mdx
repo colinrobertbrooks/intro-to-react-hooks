@@ -37,7 +37,7 @@ _"Hooks are a new addition in React 16.8. They let you use state and other React
 
 ---
 
-import Counter from 'components/Counter.hook';
+import Counter from 'src/components/Counter.hook';
 
 # State
 
@@ -47,7 +47,7 @@ import Counter from 'components/Counter.hook';
 
 <CodeSurfer
  title="State"
-  code={require("!raw-loader!./snippets/state.snippet").default}
+  code={require("!raw-loader!./src/snippets/state.snippet").default}
   steps={[
     { range: [2, 26], notes: "Without hooks" },
     { range: [29, 41], notes: "With hooks" },
@@ -67,7 +67,7 @@ _A new way to hook into state management._
 
 ---
 
-import MousePosition from 'components/MousePosition.custom-hook';
+import MousePosition from 'src/components/MousePosition.custom-hook';
 
 # Side Effects
 
@@ -77,7 +77,7 @@ import MousePosition from 'components/MousePosition.custom-hook';
 
 <CodeSurfer
  title="Side Effects"
-  code={require("!raw-loader!./snippets/side-effects.snippet").default}
+  code={require("!raw-loader!./src/snippets/side-effects.snippet").default}
    steps={[
     { range: [2, 26], notes: "Without hooks" },
     { range: [29, 51], notes: "With hooks" },
@@ -89,7 +89,7 @@ import MousePosition from 'components/MousePosition.custom-hook';
 
 <CodeSurfer
  title="Side Effects"
-  code={require("!raw-loader!./snippets/custom-hook.snippet").default}
+  code={require("!raw-loader!./src/snippets/custom-hook.snippet").default}
    steps={[
     { notes: "With a custom hook 😎" },
     { range: [2, 20], notes: "Custom hook" },
